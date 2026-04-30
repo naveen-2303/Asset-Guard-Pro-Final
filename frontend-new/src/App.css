@@ -1,0 +1,124 @@
+/* --- Global Reset --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: #020617; 
+    color: #94a3b8; /* Slate text, no white */
+}
+
+.animated-bg {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #020617);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.glass-card {
+    background: rgba(15, 23, 42, 0.4) !important; /* Low opacity for transparency */
+    backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(14, 165, 233, 0.1) !important; /* Cyan border */
+    border-radius: 20px !important;
+}
+
+/* --- Dark Inputs --- */
+.form-control {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(14, 165, 233, 0.2) !important;
+    color: #0ea5e9 !important; /* Cyan text */
+    border-radius: 12px !important;
+}
+
+.form-control:focus {
+    border-color: #0ea5e9 !important;
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2) !important;
+    outline: none;
+}
+
+/* --- ⚡ MODIFIED: Transparent Product List & Table ⚡ --- */
+.table-responsive {
+    background: transparent !important;
+}
+
+.table {
+    /* This overrides Bootstrap's default white background variables */
+    --bs-table-bg: transparent !important;
+    --bs-table-color: #94a3b8 !important;
+    background-color: transparent !important;
+    margin-bottom: 0;
+}
+
+.transparent-row {
+    background: rgba(15, 23, 42, 0.3) !important; /* Matches glass-card logic */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.transparent-row:hover {
+    background: rgba(14, 165, 233, 0.08) !important; /* Subtle cyan tint on hover */
+}
+
+/* Ensure table headers are not white/dark */
+.table thead th {
+    background: transparent !important;
+    color: #64748b !important;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.2) !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* Big countdown numbers logic */
+.table h2 {
+    color: #0ea5e9 !important;
+    font-weight: 800;
+}
+
+/* --- No White Background for Stats Percentage --- */
+.progress-circle {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 2px solid rgba(14, 165, 233, 0.2) !important;
+    color: #0ea5e9 !important;
+}
+
+/* --- Button Overrides --- */
+.btn-info {
+    background: #0ea5e9 !important;
+    color: #020617 !important; /* Dark text on cyan button */
+    border: none !important;
+}
+
+.btn-outline-info {
+    color: #0ea5e9 !important;
+    border-color: #0ea5e9 !important;
+}
+
+.text-danger { color: #d97706 !important; } /* Amber */
+.border-danger { border-color: #d97706 !important; }
+.bg-danger { background-color: #d97706 !important; }
+
+/* --- Scrollbar styling to match dark theme --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
